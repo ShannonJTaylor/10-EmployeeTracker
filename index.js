@@ -1,5 +1,6 @@
-// index.js
+const figlet = require('figlet');
 const inquirer = require('inquirer');
+
 const { 
     getDepartments, 
     getRoles, 
@@ -9,6 +10,19 @@ const {
     addEmployee, 
     updateEmployeeRole 
 } = require('./db/queries');  // Importing all the necessary functions
+
+// Display the title using figlet
+figlet('Employee Tracker', (err, data) => {
+    if (err) {
+        console.log('Something went wrong...');
+        console.dir(err);
+        return;
+    }
+    console.log(data);
+    
+    // Start the main menu AFTER displaying the title
+    mainMenu();
+});
 
 async function mainMenu() {
     const { action } = await inquirer.prompt([
@@ -119,151 +133,5 @@ async function mainMenu() {
     mainMenu(); // Restart menu after an action
 }
 
-// Start the application
-mainMenu();
 
-// const { viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole } = require('.db/db');  // Importing the viewDepartments function
 
-// const mainMenu = async () => {
-//   const answers = await inquirer.prompt([
-//     {
-//       type: 'list',
-//       name: 'action',
-//       message: 'What would you like to do?',
-//       choices: [
-//         'View all departments',
-//         'View all roles',
-//         'View all employees',
-//         'Add a department',
-//         'Add a role',
-//         'Add an employee',
-//         'Update an employee role',
-//         'Exit'
-//       ],
-//     },
-//   ]);
-
-//   switch (answers.action) {
-//     case 'View all departments':
-//       await viewDepartments();  // Show departments
-//       break;
-
-//     case 'View all roles':
-//         await viewRoles(); //View all roles
-//         break;
-      
-//     case 'View all employees':
-//         await viewEmployees(); //View all employees
-//         break;
-
-//     case 'Add a department':
-//         await addDepartmentPrompt(); //Add a department
-//         break;
-
-//     case 'Add a role':
-//         await addRolePrompt(); //Add a role
-//         break;
-
-//     case 'Add an employee':
-//         await addEmployeePrompt(); //Add an employee
-//         break;
-
-//     case 'Update an employee role':
-//         await updateEmployeeRolePrompt(); //Update an employee role
-//         break;
-
-//     case 'Exit':
-//         console.log('Goodbye!'); 
-//         process.exit(); //Exit the app
-        
-//     default:
-//         break;
-//   }
-
-//   // Return to the main menu after an action
-//   mainMenu();
-// };
-
-// //Add department
-// const addDepartmentPrompt = async () => {
-//     const { departmentName } = await inquirer.prompt(
-//         {
-//             type: 'input',
-//             name: 'departmentName',
-//             message: 'Enter the name of the department:',
-//         },
-// );
-
-// await addDepartment(departmentName);
-// mainMenu();
-// };
-
-// //Add role Prompt
-// const addRolePrompt = async () => {
-//     const { title, salary, departmentId } = await inquirer.prompt([
-//         {
-//             type: 'input',
-//             name: 'title',
-//             message: 'Enter the title of the role:',
-//         },
-//         {
-//             type: 'input',
-//             name: 'salary',
-//             message: 'Enter the role salary:',
-//         },
-//     ]);
-//     await addRole(title, salary, departmentId);
-//     mainMenu();
-// };
-
-// //Add employee prompt
-// const addEmployeePrompt = async () => {
-//     const { firstName, lastName, roleId, managerId } = await inquirer.prompt([
-//         {
-//             type: 'input',
-//             name: 'firstName',
-//             message: 'Enter the first name of the employee:',
-//         },
-//         {
-//             type: 'input',
-//             name: 'lastName',
-//             message: 'Enter the last name of the employee:',
-//         },
-//         {
-//             type: 'input',
-//             name: 'roleId',
-//             message: 'Enter the role ID for the employee:',
-//         },
-//         {
-//             type: 'input',
-//             name: 'managerId',
-//             message: 'Enter the manager ID (or leave blank if none):',
-//             default: null,  
-//         },
-//     ]);
-//     await addEmployee(firstName, lastName, roleId, managerId);
-//     mainMenu();
-// };
-
-// //Update the employee Role Prompt
-// const updateEmployeeRolePrompt = async () => {
-//     const { employeeId, newRoleId } = await inquirer.prompt([
-//       {
-//         type: 'input',
-//         name: 'employeeId',
-//         message: 'Enter the employee ID whose role you want to update:',
-//       },
-//       {
-//         type: 'input',
-//         name: 'newRoleId',
-//         message: 'Enter the new role ID for the employee:',
-//       },
-//     ]);
-  
-//     await updateEmployeeRole(employeeId, newRoleId);
-//     mainMenu();
-//   };
-  
-
-// // Start the app
-// mainMenu();
