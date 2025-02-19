@@ -122,14 +122,6 @@ async function mainMenu() {
 // Start the application
 mainMenu();
 
-
-
-
-
-
-
-
-// const inquirer = require('inquirer');
 // const { viewDepartments, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole } = require('.db/db');  // Importing the viewDepartments function
 
 // const mainMenu = async () => {

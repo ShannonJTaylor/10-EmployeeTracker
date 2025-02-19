@@ -26,7 +26,7 @@ const viewDepartments = async () => {
       console.log('Error fetching departments:', err.message);
     }    
   };  
-  export { viewDepartments };   
+     
 
 const viewRoles = async () => {
     try {
@@ -36,7 +36,7 @@ const viewRoles = async () => {
     console.log('Error fetching roles:', err.message);
     }
   };
-  export { viewRoles };
+  
 
 const viewEmployees = async () => {
     try {
@@ -46,8 +46,7 @@ const viewEmployees = async () => {
     console.log('Error fetching employees:', err.message);
     }
   };
-  export { viewEmployees };
-
+ 
 const addDepartment = async (name) => {
     try {
     await client.query('INSERT INTO department (name) VALUES ($1)', [name]);
@@ -56,17 +55,17 @@ const addDepartment = async (name) => {
     console.log('Error adding department:', err.message);
     }
   };
-    export { addDepartment };
+   
 
-const addRole = async (title, salary, department_id ) => {
+const addRole = async (title, salary, department_id) => {
     try {
-    await client.query('INSERT INTO role (title, salary, department_id) VALUES ($1, $2, $3, $4)', [title, salary, department_id]);
+    await client.query('INSERT INTO role (title, salary, department_id) VALUES ($1, $2, $3)', [title, salary, department_id]);
     console.log(`Added role: ${title}`);
     } catch (err) {
     console.log('Error adding role:', err.message);
     }
   };
-    export { addRole };
+   
 
 const addEmployee = async (first_name, last_name, role_id, manager_id = null) => {
     try {
@@ -76,5 +75,12 @@ const addEmployee = async (first_name, last_name, role_id, manager_id = null) =>
     console.log('Error adding employee:', err.message);
     }
   };
-    export { addEmployee };
+export {
+    viewDepartments,
+    viewRoles,
+    viewEmployees,
+    addDepartment,
+    addRole,
+    addEmployee          
+};
   

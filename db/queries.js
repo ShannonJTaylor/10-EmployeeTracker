@@ -43,8 +43,8 @@ const addDepartment = async (name) => {
 const addRole = async (title, salary, department_id) => {
     try {
         await pool.query(
-            'INSERT INTO role (title, salary, department_id) VALUES ($1, $2, $3, $4)',
-            [title, salary, department_id, manager_id]
+            'INSERT INTO role (title, salary, department_id) VALUES ($1, $2, $3)',
+            [title, salary, department_id]
         );
         console.log(`Added role: ${title}`);
     } catch (err) {
