@@ -3,10 +3,10 @@ require('dotenv').config();
 
 const pool = new Pool({
     user: process.env.DB_USER,
-    host: 'localhost',
-    database: 'employee_db',
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
     password: process.env.DB_PASSWORD,
-    port: 5432
+    port: process.env.DB_PORT,
 });
 
-module.exports = pool;
+module.exports = pool; //Export pool to use in queries.js. 
