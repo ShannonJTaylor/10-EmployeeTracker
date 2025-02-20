@@ -24,6 +24,7 @@ ___
 ## Video Walkthrough
 
 Here is a walkthrough video demonstrating how to use the Employee Tracker:
+https://app.screencastify.com/v3/watch/jgYrIBVGBJlBEfc7FB33
 
 ___
 
