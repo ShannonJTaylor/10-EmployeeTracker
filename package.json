@@ -8,7 +8,7 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "ShannonJTaylor",
   "license": "MIT",
   "dependencies": {
     "figlet": "^1.8.0",

@@ -2,11 +2,12 @@
 
 ## Table of Contents
 - [Description](#description)
+- [Video Walkthrough](#video-walkthrough)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Video Walkthrough](#video-walkthrough)
 - [License](#license)
 - [Dependencies](#dependencies)
+___
 
 ## Description
 
@@ -18,11 +19,19 @@ The Employee Tracker System is a command-line application built using Node.js, I
 
 This app helps streamline the management of a company's employee database.
 
+___
+
+## Video Walkthrough
+
+Here is a walkthrough video demonstrating how to use the Employee Tracker:
+
+___
+
 ## Installation
 
 1. Clone the repository to your local machine.
     ```bash
-    git clone https://github.com/ShannonJTaylor/10-employee-tracker.git
+    git clone https://github.com/ShannonJTaylor/10-EmployeeTracker.git
     ```
 2. Navigate into the project folder.
     ```bash
@@ -40,6 +49,9 @@ This app helps streamline the management of a company's employee database.
     DB_PASSWORD=your_database_password
     DB_PORT=5432
     ```
+    - Note: if using MySQL, update the connection setting to match your MySQL database credentials.
+
+    ___
 
 ## Usage
 
@@ -70,12 +82,12 @@ Update Employee Role - Change the role of an existing employee.
 
 Exit - Exit the application.
 
-## Video Walkthrough
-
-Here is a walkthrough video demonstrating how to use the Employee Tracker:
+___
 
 ## License
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+___
 
 ## Dependencies
 Inquirer - For providing a simple and powerful way to handle user input.
@@ -85,3 +97,5 @@ Node.js - For being the runtime environment that powers this application.
 PostgreSQL - For being the database used to store employee data.
 
 Figlet - For generating the stylized title at startup.
+___
+**Made with ❤️ by [[ShannonJTaylor](https://github.com/ShannonJTaylor)]**
